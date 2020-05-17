@@ -3,5 +3,25 @@
 Home
 {% endblock  %}
 {% block content %}
-<h1>Welcome to my new home</h1>
+<br>
+
+
+{% if api %}
+    {% if api == "Error..." %}
+        Error Locating Api, Pleas try agian soon...
+    {% endif %}
+
+    <div class="jumbotron {{color}}">
+        <h1 class="display-4">{{api.0.Category.Name}} </h1>
+        <p class="lead"> {{api.0.ReportingArea}} Air Qulaity: {{api.0.AQI}}</p>
+        <hr class="my-4">
+        
+       <p>{{description}}</p> 
+
+    </div>
+
+{% endif %}
+
+
+
 {% endblock %}
